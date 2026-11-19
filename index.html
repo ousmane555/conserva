@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CONSERVA — Gestion du stockage maraîcher</title>
+<meta name="theme-color" content="#0b2a1f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="CONSERVA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/tabler.min.css">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</symbol><symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" />
+  <path d="M12 12l8 -4.5" />
+  <path d="M12 12l0 9" />
+  <path d="M12 12l-8 -4.5" />
+</symbol><symbol id="i-snowflake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M10 4l2 1l2 -1" />
+  <path d="M12 2v6.5l3 1.72" />
+  <path d="M17.928 6.268l.134 2.232l1.866 1.232" />
+  <path d="M20.66 7l-5.629 3.25l.01 3.458" />
+  <path d="M19.928 14.268l-1.866 1.232l-.134 2.232" />
+  <path d="M20.66 17l-5.629 -3.25l-2.99 1.738" />
+  <path d="M14 20l-2 -1l-2 1" />
+  <path d="M12 22v-6.5l-3 -1.72" />
+  <path d="M6.072 17.732l-.134 -2.232l-1.866 -1.232" />
+  <path d="M3.34 17l5.629 -3.25l-.01 -3.458" />
+  <path d="M4.072 9.732l1.866 -1.232l.134 -2.232" />
+  <path d="M3.34 7l5.629 3.25l2.99 -1.738" />
+</symbol><symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12" />
+  <path d="M16 3v4" />
+  <path d="M8 3v4" />
+  <path d="M4 11h16" />
+</symbol><symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
+  <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
+</symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+  <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+</symbol><symbol id="i-temperature" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M10 13.5a4 4 0 1 0 4 0v-8.5a2 2 0 0 0 -4 0v8.5" />
+  <path d="M10 9l4 0" />
+</symbol><symbol id="i-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" />
+</symbol><symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M12 5l0 14" />
+  <path d="M5 12l14 0" />
+</symbol><symbol id="i-alert-triangle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M12 9v4" />
+  <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+  <path d="M12 16h.01" />
+</symbol><symbol id="i-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  <path d="M9 12l2 2l4 -4" />
+</symbol><symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M5 21c.5 -4.5 2.5 -8 7 -10" />
+  <path d="M9 18c6.218 0 10.5 -3.288 11 -12v-2h-4.014c-9 0 -11.986 4 -12 9c0 1 0 3 2 5h3l.014 0" />
+</symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008" />
+</symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+  <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+</symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  
+  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+  <path d="M12 7v5l3 3" />
+</symbol></defs></svg>
+<div id="loginView" class="page page-center" hidden>
+  <div class="container container-tight py-4">
+    <div class="text-center mb-4">
+      <span class="avatar avatar-lg bg-primary text-white mb-2"><svg class="icon"><use href="#i-leaf"/></svg></span>
+      <h1 class="h2 mb-0">CONSERVA</h1>
+      <div class="text-secondary">Stockage maraîcher · Niayes</div>
+    </div>
+    <div class="card card-md">
+      <div class="card-header p-0">
+        <ul class="nav nav-tabs nav-fill w-100 border-0" role="tablist" id="authTabs">
+          <li class="nav-item" role="presentation"><button type="button" class="nav-link active" role="tab" aria-selected="true" data-auth="login" id="tabLogin">Connexion</button></li>
+          <li class="nav-item" role="presentation"><button type="button" class="nav-link" role="tab" aria-selected="false" data-auth="signup" id="tabSignup">Créer un compte</button></li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <form id="loginForm" novalidate>
+          <h2 class="h3 mb-1">Bon retour</h2>
+          <p class="text-secondary mb-3">Connectez-vous pour suivre votre stock et vos réservations.</p>
+          <div class="mb-3"><label class="form-label" for="lEmail">Adresse e-mail</label><input class="form-control" id="lEmail" type="email" autocomplete="username" placeholder="vous@exemple.sn"></div>
+          <div class="mb-3"><label class="form-label" for="lPass">Mot de passe</label><input class="form-control" id="lPass" type="password" autocomplete="current-password"></div>
+          <p class="text-danger mb-3" id="lMsg" role="status"></p>
+          <button class="btn btn-primary w-100" type="submit" id="lBtn">Se connecter</button>
+        </form>
+        <form id="signupForm" novalidate hidden>
+          <h2 class="h3 mb-1">Créer un compte</h2>
+          <p class="text-secondary mb-3">Un administrateur valide ensuite votre compte avant l'accès aux données.</p>
+          <div class="row g-3 mb-3">
+            <div class="col-4"><label class="form-label" for="sType">Vous êtes</label><select class="form-select" id="sType"><option>GIE</option><option>Producteur</option></select></div>
+            <div class="col-8"><label class="form-label" for="sNom">Nom du GIE ou du producteur</label><input class="form-control" id="sNom" autocomplete="organization" placeholder="Ex. GIE Keur Massar"></div>
+          </div>
+          <div class="mb-3"><label class="form-label" for="sEmail">Adresse e-mail</label><input class="form-control" id="sEmail" type="email" autocomplete="email" placeholder="vous@exemple.sn"></div>
+          <div class="row g-3 mb-3">
+            <div class="col-md-6"><label class="form-label" for="sPass">Mot de passe</label><input class="form-control" id="sPass" type="password" autocomplete="new-password" placeholder="8 caractères minimum"></div>
+            <div class="col-md-6"><label class="form-label" for="sPass2">Confirmer</label><input class="form-control" id="sPass2" type="password" autocomplete="new-password"></div>
+          </div>
+          <p class="mb-3" id="sMsg" role="status"></p>
+          <button class="btn btn-primary w-100" type="submit" id="sBtn">Créer mon compte</button>
+        </form>
+        <div class="alert alert-warning mt-3 mb-0" id="demoNote" hidden>Mode démonstration : la connexion est désactivée. Renseignez <code>config.js</code> pour l'activer.</div>
+      </div>
+    </div>
+    <div class="text-center mt-3" id="authFoot"></div>
+  </div>
+</div>
+
+<div id="pendingView" class="page page-center" hidden>
+  <div class="container container-tight py-4">
+    <div class="card card-md"><div class="card-body text-center py-5">
+      <span class="avatar avatar-lg bg-yellow-lt mb-3"><svg class="icon"><use href="#i-clock"/></svg></span>
+      <h2 class="h3">Compte en attente de validation</h2>
+      <p class="text-secondary mb-1">Votre compte <b id="pendEmail"></b> est créé.</p>
+      <p class="text-secondary">Un administrateur doit le valider avant que vous puissiez voir votre stock et réserver.</p>
+      <div class="d-flex gap-2 justify-content-center"><button class="btn btn-primary" type="button" id="pendRetry">Vérifier à nouveau</button><button class="btn" type="button" id="pendOut">Se déconnecter</button></div>
+      <p class="mt-3 mb-0 text-secondary" id="pendMsg" role="status"></p>
+    </div></div>
+  </div>
+</div>
+
+<div id="appView" hidden>
+<div class="page">
+  <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+      <h1 class="navbar-brand navbar-brand-autodark">
+        <a href="#dashboard" class="d-flex align-items-center gap-2 text-decoration-none">
+          <span class="avatar avatar-sm bg-primary text-white"><svg class="icon"><use href="#i-leaf"/></svg></span>
+          <span class="brand-text"><b>CONSERVA</b><small>Stockage maraîcher · Niayes</small></span>
+        </a>
+      </h1>
+      <div class="collapse navbar-collapse" id="sidebar-menu">
+        <ul class="navbar-nav pt-lg-3" id="nav"></ul>
+        <div class="side-card mt-auto">
+          <div class="d-flex align-items-center gap-2 fw-medium"><span class="status-dot status-dot-animated bg-green"></span>Capteurs en ligne</div>
+          <div class="text-secondary small mt-1" id="sideNote">Chambre froide 01. Mesures simulées en attendant les capteurs ESP32.</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="page-wrapper">
+    <div class="page-header">
+      <div class="container-xl">
+        <div class="row g-2 align-items-center">
+          <div class="col">
+            <div class="page-pretitle" id="pageSub"></div>
+            <h2 class="page-title" id="pageTitle"></h2>
+          </div>
+          <div class="col-auto ms-auto d-flex align-items-center gap-2">
+            <span class="badge bg-yellow-lt d-none" id="modeBadge">Mode démonstration</span>
+            <span class="text-secondary small d-none d-lg-inline" id="whoami"></span>
+            <button class="btn btn-icon" id="themeBtn" type="button" aria-label="Changer de thème"><svg class="icon"><use href="#i-moon"/></svg></button>
+            <span id="pageAction"></span>
+            <button class="btn" id="logoutBtn" type="button" hidden>Déconnexion</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-body">
+      <div class="container-xl">
+        <div id="notice"></div>
+
+        <section id="sec-dashboard" class="page-sec">
+          <div class="row row-deck row-cards" id="kpis"></div>
+          <div class="row row-deck row-cards mt-1">
+            <div class="col-lg-7">
+              <div class="card">
+                <div class="card-header"><h3 class="card-title">Occupation · Chambre froide 01</h3><div class="card-actions"><a href="#chambres" class="btn btn-sm">Régler la capacité</a></div></div>
+                <div class="card-body"><div class="gauge-wrap" id="dashGauge"></div></div>
+                <div class="card-footer"><a href="#reservations" class="btn btn-primary"><svg class="icon icon-1"><use href="#i-plus"/></svg>Faire une réservation</a></div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="d-flex flex-column gap-3 h-100">
+                <div class="card">
+                  <div class="card-header"><h3 class="card-title">Conditions en direct</h3><div class="card-actions d-flex align-items-center gap-2"><span class="text-secondary small" id="serialStatus" role="status"></span><button class="btn btn-sm btn-outline-primary" id="serialConnectBtn" type="button" hidden>Connecter le capteur USB</button></div></div>
+                  <div class="card-body">
+                    <div class="row g-2 mb-3" id="envBox"></div>
+                    <svg class="spark" id="spark" viewBox="0 0 320 90" preserveAspectRatio="none" role="img" aria-label="Température des dernières mesures"></svg>
+                  </div>
+                </div>
+                <div class="card flex-fill">
+                  <div class="card-header"><h3 class="card-title">Dernière alerte</h3><div class="card-actions"><a href="#alertes" class="btn btn-sm">Tout voir</a></div></div>
+                  <div class="card-body" id="lastAlert"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <div class="card-header"><h3 class="card-title">Produits actuellement stockés</h3><div class="card-actions"><a href="#produits" class="btn btn-sm">Gérer</a></div></div>
+            <div class="table-responsive"><table class="table card-table table-vcenter text-nowrap"><thead><tr><th>Produit</th><th class="text-end">Quantité</th><th>Producteur</th><th>Sortie</th><th>État</th></tr></thead><tbody id="dashProducts"></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="sec-produits" class="page-sec" hidden>
+          <div class="card">
+            <div class="table-responsive"><table class="table card-table table-vcenter text-nowrap"><thead><tr><th>Produit</th><th class="text-end">Quantité</th><th>Producteur</th><th>Entrée</th><th>Sortie prévue</th><th>État</th><th></th></tr></thead><tbody id="products"></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="sec-chambres" class="page-sec" hidden>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Capacité de la chambre</h3><div class="card-actions text-secondary small">Réglable de 100 kg à 1 tonne</div></div>
+            <div class="card-body">
+              <div class="cap-row">
+                <div class="cap-val"><span id="capNum">1000</span><small>kg</small></div>
+                <input type="range" class="form-range" id="capRange" min="100" max="1000" step="50" aria-label="Capacité totale en kilogrammes">
+              </div>
+              <div class="d-flex justify-content-between text-secondary small"><span>100 kg</span><span>500 kg</span><span>1 tonne</span></div>
+              <div class="btn-list mt-3" id="capChips"></div>
+              <p class="text-secondary mt-3 mb-0" id="capHint"></p>
+            </div>
+          </div>
+          <div class="row row-deck row-cards mt-1">
+            <div class="col-lg-6"><div class="card"><div class="card-header"><h3 class="card-title">Occupation</h3></div><div class="card-body"><div class="gauge-wrap" id="chGauge"></div></div></div></div>
+            <div class="col-lg-6"><div class="card"><div class="card-header"><h3 class="card-title">Répartition par produit</h3></div><div class="card-body"><div class="seg" id="seg"></div><div class="legend-list" id="legend"></div></div></div></div>
+          </div>
+          <div class="card mt-3"><div class="card-body"><h3 class="card-title">Règle de disponibilité</h3><p class="mb-0" style="max-width:65ch">Une réservation est acceptée si la quantité demandée, ajoutée aux produits et réservations qui se chevauchent sur la période choisie, ne dépasse pas la capacité de la chambre.</p></div></div>
+        </section>
+
+        <section id="sec-reservations" class="page-sec" hidden>
+          <div class="card">
+            <div class="card-header"><h3 class="card-title">Nouvelle réservation</h3></div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6"><label class="form-label" for="rProducer">Producteur / GIE</label><select class="form-select" id="rProducer"></select></div>
+                <div class="col-md-6"><label class="form-label" for="rProduct">Produit</label><input class="form-control" id="rProduct" placeholder="Ex. Tomates"></div>
+                <div class="col-md-4"><label class="form-label" for="rQty">Quantité (kg)</label><input class="form-control" id="rQty" type="number" min="1" placeholder="200"></div>
+                <div class="col-md-4"><label class="form-label" for="rStart">Date d'entrée</label><input class="form-control" id="rStart" type="date"></div>
+                <div class="col-md-4"><label class="form-label" for="rEnd">Date de sortie prévue</label><input class="form-control" id="rEnd" type="date"></div>
+              </div>
+              <p class="mt-3 mb-0 text-secondary" id="reservationMsg" role="status"></p>
+            </div>
+            <div class="card-footer d-flex align-items-center justify-content-between flex-wrap gap-2"><div id="availLive" class="text-secondary"></div><button class="btn btn-primary" id="reserveBtn" type="button">Vérifier et réserver</button></div>
+          </div>
+          <div class="card mt-3">
+            <div class="card-header"><h3 class="card-title">Réservations enregistrées</h3></div>
+            <div class="table-responsive"><table class="table card-table table-vcenter text-nowrap"><thead><tr><th>Produit</th><th>Producteur</th><th class="text-end">Quantité</th><th>Période</th><th>Statut</th></tr></thead><tbody id="reservationsTable"></tbody></table></div>
+          </div>
+        </section>
+
+        <section id="sec-alertes" class="page-sec" hidden>
+          <div class="row row-cards">
+            <div class="col-md-4"><div class="card card-sm"><div class="card-body"><div class="subheader">Température</div><div class="h2 mb-0">2 à 8 °C</div></div></div></div>
+            <div class="col-md-4"><div class="card card-sm"><div class="card-body"><div class="subheader">Humidité</div><div class="h2 mb-0">70 à 90 %</div></div></div></div>
+            <div class="col-md-4"><div class="card card-sm"><div class="card-body"><div class="subheader">Occupation</div><div class="h2 mb-0">alerte dès 90 %</div></div></div></div>
+          </div>
+          <div class="card mt-3"><div class="card-header"><h3 class="card-title">Journal</h3></div><div class="list-group list-group-flush" id="alertList"></div></div>
+        </section>
+
+        <section id="sec-producteurs" class="page-sec" hidden>
+          <div class="card mb-3" id="pendingCard" hidden>
+            <div class="card-header"><h3 class="card-title">Comptes à valider</h3><span class="badge bg-yellow-lt ms-2" id="pendingCount"></span></div>
+            <div class="table-responsive"><table class="table card-table table-vcenter text-nowrap"><thead><tr><th>E-mail</th><th>Nom demandé</th><th>Rattacher à</th><th></th></tr></thead><tbody id="pendingRows"></tbody></table></div>
+            <div class="card-footer text-secondary small">Vérifiez que le compte correspond bien au producteur choisi avant de le valider.</div>
+          </div>
+          <div class="row row-cards" id="producers"></div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<a id="whatsappContact" class="btn btn-success position-fixed bottom-0 end-0 m-3 shadow" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contacter CONSERVA sur WhatsApp">Contacter sur WhatsApp</a>
+
+<div class="modal modal-blur fade" id="addModal" tabindex="-1" aria-labelledby="mTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="mTitle">Ajouter un produit</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-8"><label class="form-label" for="aName">Produit</label><input class="form-control" id="aName" placeholder="Ex. Piments"></div>
+          <div class="col-md-4"><label class="form-label" for="aQty">Quantité (kg)</label><input class="form-control" id="aQty" type="number" min="1" placeholder="100"></div>
+          <div class="col-md-6"><label class="form-label" for="aProd">Producteur / GIE</label><select class="form-select" id="aProd"></select></div>
+          <div class="col-md-6"><label class="form-label" for="aOut">Sortie prévue</label><input class="form-control" id="aOut" type="date"></div>
+        </div>
+        <p class="mt-3 mb-0 text-danger" id="aMsg" role="status"></p>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal" id="aCancel">Annuler</button><button type="button" class="btn btn-primary" id="aSave">Ajouter</button></div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-blur fade" id="prodModal" tabindex="-1" aria-labelledby="pTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header"><h5 class="modal-title" id="pTitle">Ajouter un producteur</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button></div>
+      <div class="modal-body">
+        <div class="row g-3">
+          <div class="col-md-8"><label class="form-label" for="pName">Nom</label><input class="form-control" id="pName" placeholder="Ex. GIE Keur Massar"></div>
+          <div class="col-md-4"><label class="form-label" for="pType">Type</label><select class="form-select" id="pType"><option>GIE</option><option>Producteur</option></select></div>
+          <div class="col-12"><label class="form-label" for="pContact">Contact</label><input class="form-control" id="pContact" placeholder="+221 …"></div>
+        </div>
+        <p class="mt-3 mb-0 text-danger" id="pMsg" role="status"></p>
+      </div>
+      <div class="modal-footer"><button type="button" class="btn" data-bs-dismiss="modal" id="pCancel">Annuler</button><button type="button" class="btn btn-primary" id="pSave">Ajouter</button></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="config.js"></script>
+<script src="assets/supabase.min.js"></script>
+<script src="assets/tabler.min.js"></script>
+<script src="assets/app.js"></script>
+<script>if("serviceWorker" in navigator&&location.protocol.startsWith("http")){navigator.serviceWorker.register("sw.js").catch(function(){})}</script>
+</body>
+</html>
